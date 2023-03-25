@@ -1,0 +1,34 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			function next(){
+				let
+					next = document.querySelector("p.nomer-voprosa"),
+					next1 = Number(next.textContent) + 1;
+				
+				document.open();				
+				document.write("<p class='nomer-voprosa'>" + next1 + "</p><img src='" + next1 + ".png' height='75%'></img><p><a onclick='next()'>дальше</a></p><p><a onclick='why()'>почему так</a></p>");
+				document.close();
+			}
+			
+			function why(){
+				let
+					audio = new Audio(),
+					next = document.querySelector("p.nomer-voprosa"),
+					next1 = Number(next.textContent);
+				
+				audio.src = "почемутак.mp3";
+				audio.autoplay = true;
+				document.open();				
+				document.write("<p class='nomer-voprosa'>" + next1 + "</p><img src='why/" + next1 + ".png' height='75%'></img><p><a onclick='next()'>дальше</a></p><p><a onclick='why()'>почему так</a></p>");
+				document.close();
+			}
+		</script>
+		<p class="nomer-voprosa">1</p>
+		<img src="1.png" height="75%"></img>
+		<p><a onclick="next()">дальше</a></p>
+		<p><a onclick="why()">почему так</a></p>
+	</body>
+</html>
